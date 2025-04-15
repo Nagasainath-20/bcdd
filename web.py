@@ -37,8 +37,8 @@ def load_models():
 binary_model, benign_model, malignant_model, grade_model = load_models()
 
 binary_labels = ["Benign", "Malignant"]
-benign_labels = ["Adenosis (A)", "Fibroadenoma (F)", "Phyllodes Tumor (PT)", "Tubular Adenoma (TA)"]
-malignant_labels = ["Carcinoma (DC)", "Lobular Carcinoma (LC)", "Mucinous Carcinoma (MC)", "Papillary Carcinoma (PC)"]
+benign_labels = ["Adenosis", "Fibroadenoma", "Phyllodes Tumor", "Tubular Adenoma"]
+malignant_labels = ["Ductal Carcinoma", "Lobular Carcinoma", "Mucinous Carcinoma", "Papillary Carcinoma"]
 grade_labels = ["Grade 1", "Grade 2", "Grade 3"]
 
 def predict_image(p, m, s=(128, 128)):
@@ -106,7 +106,7 @@ def main():
         with open(ip, "wb") as f:
             f.write(up.getbuffer())
 
-        st.image(up, caption="Uploaded Image", use_column_width=True)
+        st.image(up, caption="Uploaded Image",  use_container_width=True)
         st.write("🔍 Processing...")
 
         r = ""
